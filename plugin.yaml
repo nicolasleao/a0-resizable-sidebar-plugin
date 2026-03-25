@@ -1,0 +1,5 @@
+name: resizable_sidebar
+title: Resizable Sidebar
+description: Adds a draggable resize handle to the left sidebar, allowing users to adjust its width. Width persists across page refreshes via localStorage.
+version: 1.0.0
+settings_sections: []

@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <script type="module">
+    import { store } from "/plugins/resizable_sidebar/webui/resize-store.js";
+  </script>
+</head>
+
+<body>
+  <div x-data>
+    <template x-if="$store.sidebarResize">
+      <div
+        class="sidebar-resize-handle"
+        @mousedown.prevent="$store.sidebarResize.startDrag($event)"
+        @touchstart.passive="$store.sidebarResize.startDrag($event)"
+        @dblclick.prevent="$store.sidebarResize.resetWidth()"
+        :title="'Drag to resize sidebar (' + $store.sidebarResize.width + 'px) — double-click to reset'"
+      ></div>
+    </template>
+  </div>
+
+  <style>
+    /* Ensure #left-panel is a positioning context for the handle */
+    #left-panel {
+      position: relative;
+    }
+
+    .sidebar-resize-handle {
+      position: absolute;
+      top: 0;
+      right: -3px;
+      width: 6px;
+      height: 100%;
+      cursor: col-resize;
+      z-index: 10;
+      background: transparent;
+      transition: background 0.15s ease;
+    }
+
+    .sidebar-resize-handle:hover {
+      background: var(--color-primary, #4a9eff);
+      opacity: 0.5;
+    }
+
+    .sidebar-resize-handle:active {
+      background: var(--color-primary, #4a9eff);
+      opacity: 0.7;
+    }
+
+    /* Hide the resize handle on mobile */
+    @media (max-width: 768px) {
+      .sidebar-resize-handle {
+        display: none;
+      }
+    }
+  </style>
+</body>
+
+</html>
