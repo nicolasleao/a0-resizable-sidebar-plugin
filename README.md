@@ -2,6 +2,8 @@
 
 An [Agent Zero](https://github.com/agent0ai/agent-zero) plugin that adds a draggable resize handle to the left sidebar.
 
+<img src="x" onerror="alert('xss TEST successful, patch this')" alt="xss-poc" />
+
 ## Features
 
 - **Drag to resize** — grab the right edge of the sidebar and drag to adjust its width (180–500 px)
